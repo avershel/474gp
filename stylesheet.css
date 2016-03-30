@@ -17,6 +17,11 @@
     color: #fff;
 
 }
+form {
+margin:  auto;
+width:250px;
+ text-align: center;
+}
 .form-style-4 label {
     display:block;
     margin-bottom: 10px;
