@@ -16,7 +16,7 @@ function myFunction() {
       var z = x[i].split("=");
       y.push(z[1]);
     }
-    // console.log(z);
+     console.log(y);
     document.getElementById("demo1").innerHTML = "Math SOL Score: " + y[0];
     document.getElementById("demo2").innerHTML = "Science SOL Score: " + y[1];
     document.getElementById("demo3").innerHTML = "History SOL Score: " + y[2];
@@ -36,13 +36,13 @@ function drawMultSeries() {
     var d1arr = d1.split(":");
 
     var d2 = document.getElementById("demo2").innerHTML;
-    var d2arr = d1.split(":");
+    var d2arr = d2.split(":");
 
     var d3 = document.getElementById("demo3").innerHTML;
-    var d3arr = d1.split(":");
+    var d3arr = d3.split(":");
 
     var d4 = document.getElementById("demo4").innerHTML;
-    var d4arr = d1.split(":");
+    var d4arr = d4.split(":");
       var data = google.visualization.arrayToDataTable([
         ['Subject', 'Your Score', 'Average Score'],
         ['Math', +d1arr[1].trim(), 250],
