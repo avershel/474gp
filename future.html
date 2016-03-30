@@ -1,0 +1,99 @@
+<!-- <button onclick="myFunction()">Try it</button> -->
+<body onload="myFunction()">
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<p id="demo4"></p>
+
+<br>
+<hr>
+<br>
+<script>
+function myFunction() {
+    var x = document.URL.substring(document.URL.indexOf("?")+ 1, document.URL.length).split("&");
+    var y = [];
+    for (var i = 0; i < x.length; i++) {
+      var z = x[i].split("=");
+      y.push(z[1]);
+    }
+    // console.log(z);
+    document.getElementById("demo1").innerHTML = "Math SOL Score: " + y[0];
+    document.getElementById("demo2").innerHTML = "Science SOL Score: " + y[1];
+    document.getElementById("demo3").innerHTML = "History SOL Score: " + y[2];
+    document.getElementById("demo4").innerHTML = "English SOL Score: " + y[3];
+    console.log(document.getElementById("demo1").innerHTML);
+
+}
+</script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<div id="chart_div"></div>
+    <script>
+    google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawMultSeries);
+
+function drawMultSeries() {
+    var d1 = document.getElementById("demo1").innerHTML;
+    var d1arr = d1.split(":");
+
+    var d2 = document.getElementById("demo2").innerHTML;
+    var d2arr = d1.split(":");
+
+    var d3 = document.getElementById("demo3").innerHTML;
+    var d3arr = d1.split(":");
+
+    var d4 = document.getElementById("demo4").innerHTML;
+    var d4arr = d1.split(":");
+      var data = google.visualization.arrayToDataTable([
+        ['Subject', 'Your Score', 'Average Score'],
+        ['Math', +d1arr[1].trim(), 250],
+        ['Science', +d2arr[1].trim(), 250],
+        ['History', +d3arr[1].trim(), 250],
+        ['English', +d4arr[1].trim(), 250]
+      ]);
+
+      var options = {
+        title: 'SOL Score Comparison',
+        chartArea: {width: '50%'},
+        hAxis: {
+          title: 'SOL Score',
+          minValue: 0
+        },
+        vAxis: {
+          title: 'Subject'
+        }
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+    </script>
+<br>
+<hr>
+<br>
+    <table border="1" style="background-color:FFFFCC;border-collapse:collapse;border:1px solid FFCC00;color:000000;width:100%" cellpadding="3" cellspacing="3">
+	<tr>
+		<td>Career</td>
+		<td>Starting Salary</td>
+    <td>Mean Salary</td>
+	</tr>
+	<tr>
+		<td>Computer Science</td>
+		<td>1,000,000</td>
+    <td>1,000,000</td>
+	</tr>
+  <tr>
+    <td>Management</td>
+    <td>1,000,000</td>
+    <td>1,000,000</td>
+  </tr>
+  <tr>
+    <td>Social Services</td>
+    <td>1,000,000</td>
+    <td>1,000,000</td>
+  </tr>
+  <tr>
+    <td>Nursing</td>
+    <td>1,000,000</td>
+    <td>1,000,000</td>
+  </tr>
+</table>
