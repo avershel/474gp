@@ -12,11 +12,13 @@
 <script>
 function myFunction() {
     var x = document.URL.substring(document.URL.indexOf("?")+ 1, document.URL.length).split("&");
+    console.log(x);
     var y = [];
     for (var i = 0; i < x.length; i++) {
       var z = x[i].split("=");
       y.push(z[1]);
     }
+    console.log(y.toString());
     document.getElementById("demo1").innerHTML = "Math SOL Score: " + y[0];
     document.getElementById("demo2").innerHTML = "Science SOL Score: " + y[1];
     document.getElementById("demo3").innerHTML = "History SOL Score: " + y[2];
@@ -47,12 +49,14 @@ function drawMultSeries() {
 
     var d5 = document.getElementById("demo5").innerHTML;
     var d5arr = d5.split(":");
+    console.log("sdlakfjaldf");
+    console.log(d5arr[1]);
       var data = google.visualization.arrayToDataTable([
         ['Subject', 'Your Score', 'Average Score'],
         ['Math', +d1arr[1].trim(), 250],
         ['Science', +d2arr[1].trim(), 250],
         ['History', +d3arr[1].trim(), 250],
-        ['English', +d4arr[1].trim(), 250]
+        ['English', +d4arr[1].trim(), 250],
         ['Writing', +d5arr[1].trim(), 250]
 
       ]);
